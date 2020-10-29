@@ -20,7 +20,19 @@ namespace CabInvoiceGenerator
         {
             this.numberOfRides = numberOfRides;
             this.totalFare = totalFare;
-            this.averageFare = this.totalFare / this.numberOfRides;
+            //this.averageFare = this.totalFare / this.numberOfRides;
+        }
+        /// <summary>
+        /// Parameter contructor overloaded
+        /// </summary>
+        /// <param name="numberOfRides"></param>
+        /// <param name="totalFare"></param>
+        /// <param name="averageFare"></param>
+        public InvoiceSummary(int numberOfRides, double totalFare, double averageFare)
+        {
+            this.numberOfRides = numberOfRides;
+            this.totalFare = totalFare;
+            this.averageFare = averageFare;
         }
         /// <summary>
         /// Overriding equals method
