@@ -44,5 +44,24 @@ namespace CabInvoiceGeneratorTest
 
             Assert.AreEqual(expectedSummary, summary);
         }
+        /// <summary>
+        /// uc3-Return multiple results
+        /// </summary>
+        [Test]
+        public void GetEnhancedInvoice_ShouldReturn_TotalFare_TotalRides_AverageFare()
+        {
+            ig = new InvoiceGenerator(RideType.NORMAL);
+            Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
+            int countRide = 2;
+            double tfare = 30.0;
+            double averageFare = ig.CalculateAverage(countRide, tfare);
+
+            InvoiceSummary summary = ig.CalculateFare(rides);
+            InvoiceSummary expectedSummary = new InvoiceSummary(2, 30.0);
+            double acerageFareExpected = 15.0;
+
+            Assert.AreEqual(expectedSummary, summary);
+            Assert.AreEqual(acerageFareExpected, averageFare);
+        }
     }
 }

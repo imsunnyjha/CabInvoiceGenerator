@@ -9,6 +9,9 @@ namespace CabInvoiceGenerator
         //Variables
         RideType rideType;
         private RideRepository rideRepository;
+        private int totalFare;
+        private int numberOfRides;
+        private double averagefare;
 
         //Constants
         private readonly double MINIMUM_COST_PER_KM;
@@ -87,6 +90,10 @@ namespace CabInvoiceGenerator
                 }
             }
             return new InvoiceSummary(rides.Length, totalFare);
+        }
+        public double CalculateAverage(int numberOfRides, double totalFare)
+        {
+           return averagefare = totalFare / numberOfRides;   
         }
         /// <summary>
         /// Funtion to add rides for userID
