@@ -9,7 +9,8 @@ namespace CabInvoiceGenerator
             Console.WriteLine("Welcome to Cab Invoice Generator!");
             InvoiceGenerator ig = new InvoiceGenerator(RideType.NORMAL);
             double fare = ig.CalculateFare(2.0, 5);
-            Console.WriteLine($"Fare : {fare}");
+            Console.WriteLine($"Total Fare for the journey : {fare}");
+            
         }
     }
 }
